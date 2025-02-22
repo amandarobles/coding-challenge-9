@@ -31,6 +31,9 @@ class Manager extends Employee {
     calculateBonus() {
         return this.calculateAnnualSalary() * 0.1;
     }
+    calculateAnnualSalary() {
+        return this.salary * 12 + this.calculateBonus(); //task 4-modifying annual salary to consider bonuses for managers
+    }
 }
 //test data
 const mgr1 = new Manager("John Smith", 201, "IT", 8000, 5);
@@ -51,6 +54,9 @@ class Company {
             console.log(employee.getDetails()); //logging employee details
         });
     }
+    calculateTotalPayroll() {
+        return this.employees.reduce((total, employee) => total + employee.calculateAnnualSalary(), 0); //task 4- returns the sum of all employee salaries
+    }
 }
 //test data
 const company = new Company("TechCorp");
@@ -60,3 +66,6 @@ company.listEmployees();
 //Expected output:
 //"Employee: Alice Johnson, ID: 101, Department: Sales, Salary: $5000"
 //"Manager: John Smith, ID: 201, Department: IT, Salary: $8000, Team Size: 5"
+
+// task 4: Implementing a Payroll System
+console.log(company.calculateTotalPayroll()); //Expected output: 165600 (assuming emp1 and mgr1 salaries)
