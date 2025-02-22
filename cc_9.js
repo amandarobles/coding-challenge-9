@@ -22,7 +22,7 @@ console.log(emp1.calculateAnnualSalary()); //Expected output: 60000
 // task 2: Creating a Manager Class
 class Manager extends Employee {
     constructor(name, id, department, salary, teamSize) {
-        super(name, id, departmnet, salary); //manager class inherit from employee
+        super(name, id, department, salary); //manager class inherit from employee
         this.teamSize = teamSize; //adding a new property
     }
     getDetails() {
