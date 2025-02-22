@@ -29,10 +29,10 @@ class Manager extends Employee {
         return `Manager: ${this.name}, ID: ${this.id}, Department: ${this.department}, Salary: $${this.salary}, Team Size: ${this.teamSize}`;
     }
     calculateBonus() {
-        return this.calculateAnnualSalary() * 0.1;
+        return super.calculateAnnualSalary() * 0.1;
     }
     calculateAnnualSalary() {
-        return this.salary * 12 + this.calculateBonus(); //task 4-modifying annual salary to consider bonuses for managers
+        return super.calculateAnnualSalary() + this.calculateBonus(); //task 4-modifying annual salary to consider bonuses for managers
     }
 }
 //test data
